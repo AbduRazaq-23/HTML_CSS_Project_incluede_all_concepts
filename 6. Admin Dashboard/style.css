@@ -1,0 +1,783 @@
+/* =========================================
+   1. CSS VARIABLES
+========================================= */
+
+:root {
+  --sidebar-width: 250px;
+
+  --primary-color: #6366f1;
+  --primary-dark: #4f46e5;
+
+  --background: #f5f7fb;
+  --surface: #ffffff;
+
+  --text-primary: #111827;
+  --text-secondary: #6b7280;
+
+  --border-color: #e5e7eb;
+
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #dc2626;
+
+  --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+  --radius: 12px;
+}
+
+/* =========================================
+   2. RESET
+========================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--background);
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================
+   3. MAIN DASHBOARD LAYOUT
+========================================= */
+
+.dashboard {
+  min-height: 100vh;
+
+  display: grid;
+
+  grid-template-columns: var(--sidebar-width) 1fr;
+}
+
+/* =========================================
+   4. SIDEBAR
+========================================= */
+
+.sidebar {
+  background: #111827;
+  color: white;
+
+  width: var(--sidebar-width);
+  height: 100vh;
+
+  position: sticky;
+  top: 0;
+
+  overflow-y: auto;
+
+  z-index: 100;
+}
+
+/* Custom scrollbar */
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #1f2937;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 10px;
+}
+
+/* =========================================
+   5. LOGO
+========================================= */
+
+.logo {
+  padding: 25px 20px;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  border-bottom: 1px solid #374151;
+}
+
+/* =========================================
+   6. SIDEBAR NAVIGATION
+========================================= */
+
+.sidebar-nav {
+  padding: 20px 12px;
+}
+
+.sidebar-nav ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.sidebar-nav a {
+  display: block;
+
+  padding: 13px 15px;
+
+  color: #9ca3af;
+
+  border-radius: 8px;
+
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebar-nav a:hover {
+  background: #1f2937;
+
+  color: white;
+
+  transform: translateX(3px);
+}
+
+.sidebar-nav a.active {
+  background: var(--primary-color);
+
+  color: white;
+}
+
+/* =========================================
+   7. MAIN CONTENT
+========================================= */
+
+.main-content {
+  min-width: 0;
+
+  width: 100%;
+}
+
+/* =========================================
+   8. HEADER
+========================================= */
+
+.header {
+  height: 80px;
+
+  padding: 0 30px;
+
+  background: var(--surface);
+
+  border-bottom: 1px solid var(--border-color);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 50;
+}
+
+.header h1 {
+  font-size: 24px;
+
+  margin-bottom: 2px;
+}
+
+.header p {
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+/* =========================================
+   9. PROFILE BUTTON
+========================================= */
+
+.profile-button {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: var(--primary-color);
+
+  color: white;
+
+  font-weight: 700;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.profile-button:hover {
+  background: var(--primary-dark);
+
+  transform: scale(1.05);
+}
+
+/* =========================================
+   10. DASHBOARD CONTENT
+========================================= */
+
+.dashboard-content {
+  padding: 30px;
+
+  display: grid;
+
+  gap: 25px;
+}
+
+/* =========================================
+   11. STATISTICS GRID
+========================================= */
+
+.statistics {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+/* =========================================
+   12. STAT CARD
+========================================= */
+
+.stat-card {
+  background: var(--surface);
+
+  padding: 22px;
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  border: 1px solid transparent;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--border-color);
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card span {
+  color: var(--text-secondary);
+
+  font-size: 14px;
+}
+
+.stat-card strong {
+  font-size: 28px;
+
+  line-height: 1.2;
+}
+
+.stat-card small {
+  color: var(--success);
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   13. CHARTS SECTION
+========================================= */
+
+.charts {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 20px;
+
+  min-width: 0;
+}
+
+/* =========================================
+   14. COMMON CARD STYLES
+========================================= */
+
+.chart-card,
+.activity-card,
+.orders {
+  background: var(--surface);
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  padding: 25px;
+
+  min-width: 0;
+}
+
+/* =========================================
+   15. CARD HEADER
+========================================= */
+
+.card-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.card-header h2 {
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.card-header button {
+  border: none;
+
+  background: var(--primary-color);
+
+  color: white;
+
+  padding: 8px 14px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.card-header button:hover {
+  background: var(--primary-dark);
+
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   16. CHART
+========================================= */
+
+.chart {
+  height: 250px;
+
+  padding: 20px;
+
+  border-top: 1px solid var(--border-color);
+
+  display: flex;
+
+  align-items: flex-end;
+
+  gap: 15px;
+}
+
+/* =========================================
+   17. CHART BARS
+========================================= */
+
+.bar {
+  flex: 1;
+
+  min-width: 15px;
+
+  background: var(--primary-color);
+
+  border-radius: 6px 6px 0 0;
+
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.bar:hover {
+  transform: scaleY(1.05);
+
+  opacity: 0.8;
+}
+
+/* =========================================
+   18. ACTIVITY LIST
+========================================= */
+
+.activity-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.activity-list li {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  padding-bottom: 15px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.activity-list li:last-child {
+  border-bottom: none;
+
+  padding-bottom: 0;
+}
+
+.activity-list strong {
+  font-size: 14px;
+}
+
+.activity-list span {
+  color: var(--text-secondary);
+
+  font-size: 13px;
+}
+
+/* =========================================
+   19. ORDERS
+========================================= */
+
+.orders {
+  overflow: hidden;
+}
+
+/* =========================================
+   20. TABLE CONTAINER
+========================================= */
+
+.table-container {
+  width: 100%;
+
+  overflow-x: auto;
+
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+/* =========================================
+   21. TABLE
+========================================= */
+
+table {
+  width: 100%;
+
+  min-width: 700px;
+
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 15px;
+
+  text-align: left;
+
+  border-bottom: 1px solid var(--border-color);
+
+  white-space: nowrap;
+}
+
+th {
+  color: var(--text-secondary);
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+td {
+  font-size: 14px;
+}
+
+tbody tr {
+  transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+  background: #f9fafb;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* =========================================
+   22. STATUS BADGES
+========================================= */
+
+.status {
+  display: inline-block;
+
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+.status.paid {
+  color: var(--success);
+
+  background: #dcfce7;
+}
+
+.status.pending {
+  color: var(--warning);
+
+  background: #fef3c7;
+}
+
+.status.cancelled {
+  color: var(--danger);
+
+  background: #fee2e2;
+}
+
+/* =========================================
+   23. FOCUS STATES
+========================================= */
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.35);
+
+  outline-offset: 2px;
+}
+
+/* =========================================
+   24. TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+  .statistics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   25. TABLET / SMALL LAPTOP
+========================================= */
+
+@media (max-width: 900px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+
+  .dashboard-content {
+    padding: 20px;
+  }
+
+  .header {
+    padding: 0 20px;
+  }
+}
+
+/* =========================================
+   26. MOBILE SIDEBAR
+========================================= */
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: fixed;
+
+    left: -250px;
+
+    top: 0;
+
+    width: 250px;
+
+    height: 100vh;
+
+    transition: left 0.3s ease;
+  }
+
+  /*
+    Add the "open" class with JavaScript
+    when you want to display the sidebar.
+  */
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .main-content {
+    width: 100%;
+  }
+
+  .header {
+    height: 70px;
+  }
+}
+
+/* =========================================
+   27. MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .dashboard-content {
+    padding: 15px;
+
+    gap: 15px;
+  }
+
+  .header {
+    padding: 0 15px;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .header p {
+    font-size: 12px;
+  }
+
+  .statistics {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .stat-card {
+    padding: 18px;
+  }
+
+  .stat-card strong {
+    font-size: 24px;
+  }
+
+  .chart-card,
+  .activity-card,
+  .orders {
+    padding: 18px;
+  }
+
+  .card-header h2 {
+    font-size: 16px;
+  }
+
+  .card-header button {
+    padding: 7px 10px;
+
+    font-size: 12px;
+  }
+
+  .chart {
+    height: 200px;
+
+    padding: 15px;
+
+    gap: 8px;
+  }
+}
+
+/* =========================================
+   28. VERY SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+  .header {
+    height: 65px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .profile-button {
+    width: 36px;
+
+    height: 36px;
+
+    font-size: 12px;
+  }
+
+  .dashboard-content {
+    padding: 10px;
+  }
+
+  .stat-card {
+    padding: 15px;
+  }
+
+  .stat-card strong {
+    font-size: 22px;
+  }
+
+  .chart-card,
+  .activity-card,
+  .orders {
+    padding: 15px;
+  }
+
+  .card-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .card-header button {
+    align-self: flex-start;
+  }
+}

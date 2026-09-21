@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="logo">AdminPanel</div>
+
+        <nav class="sidebar-nav">
+          <ul>
+            <li>
+              <a href="#" class="active">Dashboard</a>
+            </li>
+
+            <li>
+              <a href="#">Users</a>
+            </li>
+
+            <li>
+              <a href="#">Products</a>
+            </li>
+
+            <li>
+              <a href="#">Orders</a>
+            </li>
+
+            <li>
+              <a href="#">Analytics</a>
+            </li>
+
+            <li>
+              <a href="#">Settings</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <!-- Main Area -->
+      <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+          <div>
+            <h1>Dashboard</h1>
+            <p>Welcome back, Abdu</p>
+          </div>
+
+          <button class="profile-button">AR</button>
+        </header>
+
+        <!-- Dashboard Content -->
+        <section class="dashboard-content">
+          <!-- Statistics -->
+          <section class="statistics">
+            <article class="stat-card">
+              <span>Total Users</span>
+              <strong>2,450</strong>
+              <small>+12.5%</small>
+            </article>
+
+            <article class="stat-card">
+              <span>Total Orders</span>
+              <strong>1,248</strong>
+              <small>+8.2%</small>
+            </article>
+
+            <article class="stat-card">
+              <span>Revenue</span>
+              <strong>$24.5K</strong>
+              <small>+15.4%</small>
+            </article>
+
+            <article class="stat-card">
+              <span>Products</span>
+              <strong>584</strong>
+              <small>+5.7%</small>
+            </article>
+          </section>
+
+          <!-- Charts -->
+          <section class="charts">
+            <article class="chart-card">
+              <div class="card-header">
+                <h2>Sales Overview</h2>
+                <button>View Report</button>
+              </div>
+
+              <div class="chart">
+                <!-- CSS chart -->
+              </div>
+            </article>
+
+            <article class="activity-card">
+              <div class="card-header">
+                <h2>Recent Activity</h2>
+              </div>
+
+              <ul class="activity-list">
+                <li>
+                  <strong>New user registered</strong>
+                  <span>5 minutes ago</span>
+                </li>
+
+                <li>
+                  <strong>New order received</strong>
+                  <span>15 minutes ago</span>
+                </li>
+
+                <li>
+                  <strong>Product updated</strong>
+                  <span>1 hour ago</span>
+                </li>
+              </ul>
+            </article>
+          </section>
+
+          <!-- Orders -->
+          <section class="orders">
+            <div class="card-header">
+              <h2>Recent Orders</h2>
+              <button>View All</button>
+            </div>
+
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Customer</th>
+                    <th>Product</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <td>#1001</td>
+                    <td>John Smith</td>
+                    <td>Laptop</td>
+                    <td>Sep 20, 2026</td>
+                    <td>$1,200</td>
+                    <td>
+                      <span class="status paid">Paid</span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>#1002</td>
+                    <td>Sarah Khan</td>
+                    <td>iPhone</td>
+                    <td>Sep 19, 2026</td>
+                    <td>$999</td>
+                    <td>
+                      <span class="status pending">Pending</span>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>#1003</td>
+                    <td>Ali Ahmed</td>
+                    <td>Headphones</td>
+                    <td>Sep 18, 2026</td>
+                    <td>$199</td>
+                    <td>
+                      <span class="status cancelled">Cancelled</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
